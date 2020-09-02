@@ -1,0 +1,19 @@
+module.exports = {
+    name: 'clear',
+    description: 'Clear',
+    execute(message, args) {
+        let id = 437249534096048130;
+        if (message.author.id == id){    
+        let msg = args.join(" ");
+        if (!args.length) {
+            return message.channel.send(`Você não falou os argumentos ${message.author}!`);
+        }
+        if (isNaN(msg)) return message.reply(`isso não é um número!`);
+        if (msg > 100) return message.reply(`você não pode apagar mais de 100 mensagens!`);
+        if (msg < 1) return message.reply(`você precisa apagar pelo menos 1 mensagem!`);
+        message.channel.bulkDelete(msg);
+        }else {
+            return message.channel.send(`Você não tem permissão para executar este comando, ${message.author}!`);
+    }   
+  }
+}

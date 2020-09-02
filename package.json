@@ -1,0 +1,13 @@
+{
+  "name": "zerotwo",
+  "version": "1.0.0",
+  "description": "personal bot",
+  "main": "ZeroTwo.js",
+  "author": "LostConnection",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.2.0",
+    "opusscript": "0.0.7",
+    "ytdl-core": "^3.1.2"
+  }
+}

@@ -1,0 +1,28 @@
+module.exports = {
+    name: 'status',
+    description: 'Status',
+    execute(message, args, client) {
+        let msg = args.join(" ");
+        let id = 437249534096048130
+        if (!message.author.id == id) {
+          message.channel.send(`Você não tem permissão para executar este comando, ${message.author}!`);
+        }else {
+        if (!args.length) {
+            return message.channel.send(`Você não falou os argumentos, ${message.author}!`);
+        }else {
+            if (args === 'online') {
+                return client.user.setPresence({status: 'online'});
+            }
+            if (args === 'idle') {
+                return client.user.setPresence({status: 'idle'});
+            }
+            if (args === 'invisible') {
+                return client.user.setPresence({status: 'invisible'});
+            }
+            if (args === 'dnd') {
+                return client.user.setPresence({status: 'dnd'});
+            }
+        }
+        } 
+    }
+}
